@@ -1,0 +1,147 @@
+.login-wrapper{
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../IMAGES/demon-slayer-desktop-10-e1621888307906.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: luminosity;
+}
+.login-wrapper.image1{background-image: url(../IMAGES/247163-amazing-naruto-hd-wallpaper-2560x1600-for-desktop.jpg);}
+.login-wrapper.image2{background-image: url(../IMAGES/1488525.jpg);}
+.login-wrapper.image3{background-image: url(../IMAGES/1617498.jpg);}
+.login-wrapper.image4{background-image: url(../IMAGES/47676956d033984d24e361487c12e79c.jpg);}
+.login-wrapper.image5{background-image: url(../IMAGES/thumb-1920-1044544.jpg);}
+.login-wrapper.image6{background-image: url(../IMAGES/wanted_wallpaper.jpg);}
+.login-wrapper.image7{background-image: url(../IMAGES/minato1.png);}
+.login-wrapper.image8{background-image: url(../IMAGES/KILLUA.jpg);}
+.login-wrapper.image9{background-image: url(../IMAGES/itachi2.webp);}
+.login-wrapper.image10{background-image: url(../IMAGES/ichigo.jpg);}
+.login-wrapper.image11{background-image: url(../IMAGES/GON.jpg);}
+
+/*======================================================================BODY DESIGN==========================================================*/
+
+.login-wrapper .input-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.532);
+    border-radius: 15px;
+    height: 400px;
+    padding-top: 30px;
+    backdrop-filter: blur(20px);
+}
+.login-wrapper .input-container input{
+    width: 320px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(0, 166, 255);
+    padding: 0 8px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 95%;
+    margin-bottom: 15px;
+    background-color: transparent;color: white;
+}
+.login-wrapper .input-container input:first-child{
+    margin-top: 70px;
+}
+.login-wrapper .input-container label{
+    position: absolute; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    transition: .5s all ease;
+}
+.login-wrapper .input-container label:nth-child(2){
+    top: 28%;
+}
+.login-wrapper .input-container label:nth-child(5){
+    top: 41%;
+}
+
+/*-------------SHOW PASSWORD-----------------*/
+.login-wrapper .input-container span#show-pass{
+    width: 20px;
+    height: 20px;
+    background-image: url(../IMAGES/icons8-show-password-50.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 13%;
+    top: 40%;
+}
+.login-wrapper .input-container span#show-pass:hover{
+    cursor: pointer;
+}
+/*------------END OF SHOW PASSWORD-----------------*/
+
+
+/*--------------SPAN WAVY DESIGN-------------*/
+
+.login-wrapper .input-container label span{
+    position: absolute;
+    transition: .4s all ease;
+}
+.login-wrapper .input-container label span.wavySpan,
+.login-wrapper .input-container input:valid + label span{
+    transform: translateY(-200%);
+}
+
+/*-------END OF SPAN WAVY DESIGN-------------*/
+
+/*------------------BUTTON DESIGN---------------------*/
+.login-wrapper .input-container button{
+    margin-top: 30px;
+    width: 300px;
+    height: 50px;
+    border-radius: 28px;
+    margin-left: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+    letter-spacing: 4px;
+    word-spacing: .8px;
+    background-color: rgba(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    transition: .6s all ease;
+}
+.login-wrapper .input-container button:hover{
+    transform: scale(.9);
+    box-shadow: 0px 5px 15px aqua;
+    color: aqua;
+    letter-spacing: 2px;
+    word-spacing: .8px;
+}
+/*------------------END OF BUTTON DESIGN--------------*/
+/*----------------OTHER DESIGN--------------------*/
+
+.login-wrapper .input-container .other{
+    margin-top: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    -webkit-text-stroke: 1.2px black;
+}
+.login-wrapper .input-container .other a{
+    text-decoration: none;
+    color: rgb(60, 99, 118);
+    padding: 13px;
+    background-color: rgba(0 0 0 / 36%);
+    border-radius: 10px;
+    transition: .7s all ease;
+}
+.login-wrapper .input-container .other a:nth-child(2){
+    margin-left: 17%;
+    padding: 13px 31px;
+}
+.login-wrapper .input-container .other a:hover{
+    color: white;
+}
+
+/*----------------END OF OTHER DESIGN-------------*/
+
+/*===================================================================END OF BODY DESIGN====================================================*/
