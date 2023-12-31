@@ -1,9 +1,15 @@
 import express from "express";
 import { user_collection, anime_collection } from "./database.js";
 import cors from "cors";
+import { fileURLToPath } from "url";
+import path from "path";
+import { dirname } from "path";
 
 const web = express();
-const PORT = process.env.PORT | 8000;
+const PORT = process.env.PORT || 8000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 web.use(express.urlencoded({ extended: false }));
 web.use(express.json());
 web.use(cors());
@@ -158,6 +164,15 @@ web.post("/login", async (req, res) => {
         userdata !== null ? res.status(200).send(true) : res.status(200).send(false);
     } catch (error) {
         console.error(`erroc occured while loggin the user account =>>> ${error}`);
+    }
+})
+
+web.use(express.static(path.join(__dirname, "./frontend/dist")))
+web.get("*", (req,res)=>{
+    try {
+        res.sendFile(path.join(__dirname, "./frontend/dist/index.html"))
+    } catch (error) {
+        console.log(`error in getting the frontend file ==> ${error}`)
     }
 })
 

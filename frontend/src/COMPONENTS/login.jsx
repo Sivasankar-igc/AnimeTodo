@@ -82,7 +82,7 @@ const Login = () => {
     }
 
     const gotohomepage = () => {
-        axios.post("http://localhost:8000/login", { email, password })
+        axios.post("/login", { email, password })
             .then((res) => {
                 if (res.data == true) {
                     navigate("/homepage", { state: { useremail: email } });

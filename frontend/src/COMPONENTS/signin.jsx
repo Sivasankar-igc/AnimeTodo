@@ -67,7 +67,7 @@ const Signin = () => {
 
     const gotohomepage = () => {
         if (password === confirmpassword) {
-            axios.post("http://localhost:8000/signin", { useremail, username, password })
+            axios.post("/signin", { useremail, username, password })
                 .then((res) => {
                     if (res.data === "trytologin") {
                         window.alert("Account already exists.....Try to login")

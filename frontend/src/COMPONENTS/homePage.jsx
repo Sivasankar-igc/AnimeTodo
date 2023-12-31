@@ -14,14 +14,14 @@ const HomePage = () => {
 
         useEffect(() => {
 
-            axios.post("http://localhost:8000/getAnimeList", { email })
+            axios.post("/getAnimeList", { email })
                 .then((res) => setAnimeList(res.data.animeList))
                 .catch((error) => console.error(`Error occured while fetching anime list =>>> ${error}`));
         }, [])
 
         // THIS METHOD WILL BE CALLED WHEN THE USER CLICKS THE COMPLETE BUTTON
         const animeComplete = (animeName) => {
-            axios.post("http://localhost:8000/animeComplete", { email, animeName })
+            axios.post("/animeComplete", { email, animeName })
                 .then((res) => res.data ? location.reload() : window.alert("Something went wrong..."))
                 .catch((error) => window.alert("Something went wrong..."));
         }
@@ -30,7 +30,7 @@ const HomePage = () => {
 
         // THIS METHOD WILL BE CALLED WHEN THE USER CLICKS THE DELETE BUTTON
         const deleteAnime = (animeName) => {
-            axios.post("http://localhost:8000/deleteAnime", { email, animeName })
+            axios.post("/deleteAnime", { email, animeName })
                 .then((res) => res.data == 1 ? location.reload() : window.alert("Something went wrong..."))
                 .catch((error) => window.alert("Something went wrong..."));
         }
@@ -43,7 +43,7 @@ const HomePage = () => {
             document.querySelector(".filter .select-opt .selected-opt").innerText = item.innerText;
             rotateArrow(document.querySelector(".filter .select-opt .arrow-mark"));
 
-            axios.post("http://localhost:8000/showFilteredAnimes", { email, animeCategory })
+            axios.post("/showFilteredAnimes", { email, animeCategory })
                 .then((res) => {
                     if (res.data != null) {
                         setAnimeList(res.data);
@@ -65,7 +65,7 @@ const HomePage = () => {
 
         // THIS METHOD WILL ADD A NEW ANIME WITH THEIR RESPECTIVE CATEGORY i.e. ANIME ANIME :- BLEACH, CATEGORY :- NEW SEASON YET TO ARRIVED
         const addAnime = (animeCategory) => {
-            axios.post("http://localhost:8000/addNewAnime", { animeName, animeCategory, email })
+            axios.post("/addNewAnime", { animeName, animeCategory, email })
                 .then((res) => {
                     if (res.data == true) {
                         location.reload();
